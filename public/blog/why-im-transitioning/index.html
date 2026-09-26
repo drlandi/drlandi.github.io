@@ -1,0 +1,28 @@
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>What 25 Years of Telecom Ops Taught Me About Cloud Infrastructure — Daniel Landi</title>
+<meta name=description content="25+ years architecting mission-critical distributed systems. Now building cloud-native infrastructure and AI-assisted engineering tools."><link rel=stylesheet href=/css/style.css><link rel=icon href=data:,></head><body><header class=site-header><div class=wrap><a class=site-title href=/>Daniel Landi</a><nav><a href=/about/>About</a>
+<a href=/projects/>Projects</a>
+<a href=/blog/>Blog</a></nav></div></header><main><article class="wrap prose"><h1>What 25 Years of Telecom Ops Taught Me About Cloud Infrastructure</h1><p class=date>September 25, 2026</p><p>For 25 years I kept things running that were not allowed to go down. GSM and WCDMA
+rollouts across six countries, NOC operations on carrier-grade Unix systems, prepaid
+databases where a two-minute outage meant a support queue nobody wanted to own. The
+tooling was Solaris, Nortel, Motorola, Tekelec. The discipline was ITIL and eTOM. None
+of that tooling is what I work with today.</p><p>The discipline is exactly the same.</p><h2 id=the-pattern-repeats>The pattern repeats</h2><p>When I sat down to design a failover-resilient architecture for a recent hackathon —
+CloudFront in front of dual-origin S3 buckets, one in <code>sa-east-1</code>, one in <code>us-east-1</code> —
+I wasn&rsquo;t thinking about AWS best-practice checklists. I was thinking about the same
+question I asked for two decades: <em>what happens when this region goes dark, and does
+anyone notice before the metrics do?</em></p><p>The answer, then and now, is the same: decouple the parts that can fail independently,
+make the failover automatic instead of procedural, and instrument the seams so a human
+finds out from a dashboard instead of a phone call.</p><h2 id=whats-actually-new>What&rsquo;s actually new</h2><p>The syntax is new. Lambda instead of a NOC runbook. DynamoDB instead of a prepaid
+database on HP-UX. CloudWatch instead of a NOC engineer&rsquo;s mental model of &ldquo;this metric
+usually looks like that.&rdquo; Terraform instead of a change-management ticket. I&rsquo;m learning
+all of it deliberately, through 42 São Paulo&rsquo;s systems programming curriculum and through
+building real AWS architectures rather than following tutorials.</p><p>But I&rsquo;d be doing the field a disservice if I framed this as starting from zero. The
+instinct for where systems actually break — not where the documentation says they might,
+but where they actually do, at 3 AM, under real load — doesn&rsquo;t transfer through a
+certification. It&rsquo;s the thing 25 years bought me, and it&rsquo;s the thing I&rsquo;m not willing
+to discount just because the infrastructure is now defined in YAML instead of racked
+in a data center.</p><h2 id=where-this-goes>Where this goes</h2><p>I&rsquo;m documenting the build-out as I go — architecture write-ups, the AWS labs series,
+the systems programming work at 42 — because the value isn&rsquo;t just in having built these
+things. It&rsquo;s in being able to explain <em>why</em> each decision was made, which is the part
+most cloud tutorials skip and most production incidents expose.</p></article></main><footer class=site-footer><div class=wrap><span>&copy; 2026 Daniel Landi</span>
+<span class=links><a href=mailto:drlandi@gmail.com>email</a>
+<a href=https://github.com/drlandi target=_blank rel=noopener>github</a></span></div></footer></body></html>

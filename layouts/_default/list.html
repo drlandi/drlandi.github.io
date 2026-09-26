@@ -1,0 +1,14 @@
+{{ define "main" }}
+<section class="wrap">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  <ul class="post-list">
+    {{ range .Pages.ByDate.Reverse }}
+    <li>
+      <a href="{{ .Permalink }}"><strong>{{ .Title }}</strong></a>
+      {{ if .Params.summary }}<p>{{ .Params.summary }}</p>{{ end }}
+    </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

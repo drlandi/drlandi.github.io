@@ -1,0 +1,33 @@
+{{ define "main" }}
+<section class="hero wrap">
+  <h1>{{ .Site.Params.name }}</h1>
+  <p class="tagline">{{ .Site.Params.tagline }}</p>
+  <p class="bio">{{ .Site.Params.bio }}</p>
+</section>
+
+<section class="wrap">
+  <h2>Featured Projects</h2>
+  <ul class="project-list">
+    {{ range (where .Site.RegularPages "Section" "projects") }}
+    <li>
+      <a href="{{ .Permalink }}"><strong>{{ .Title }}</strong></a>
+      <p>{{ .Params.summary }}</p>
+    </li>
+    {{ end }}
+  </ul>
+  <p><a href="{{ "/projects/" | relURL }}">All projects &rarr;</a></p>
+</section>
+
+<section class="wrap">
+  <h2>Recent Writing</h2>
+  <ul class="post-list">
+    {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
+    <li>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      <span class="date">{{ .Date.Format "Jan 2006" }}</span>
+    </li>
+    {{ end }}
+  </ul>
+  <p><a href="{{ "/blog/" | relURL }}">All posts &rarr;</a></p>
+</section>
+{{ end }}

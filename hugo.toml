@@ -1,0 +1,29 @@
+baseURL = "https://drlandi.dev/"
+languageCode = "en-us"
+title = "Daniel Landi"
+
+[params]
+  name = "Daniel Landi"
+  tagline = "Cloud & Infrastructure Engineer"
+  bio = "25+ years architecting mission-critical distributed systems. Now building cloud-native infrastructure and AI-assisted engineering tools."
+  email = "drlandi@gmail.com"
+  github = "https://github.com/drlandi"
+  linkedin = ""
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 1
+
+[[menu.main]]
+  name = "Projects"
+  url = "/projects/"
+  weight = 2
+
+[[menu.main]]
+  name = "Blog"
+  url = "/blog/"
+  weight = 3
