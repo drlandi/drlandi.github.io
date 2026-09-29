@@ -10,7 +10,7 @@ defaultContentLanguageInSubdir = false
   name = "Daniel Landi"
   email = "drlandi@gmail.com"
   github = "https://github.com/drlandi"
-  linkedin = ""
+  linkedin = "https://www.linkedin.com/in/daniellandi1971tecnologia"
   whatsapp = "5511959270064"   # digits only: country code + number
 
 [markup.goldmark.renderer]

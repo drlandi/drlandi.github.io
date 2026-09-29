@@ -21,8 +21,8 @@ software engineering practice through:
 
 ## Site Structure
 
-- `content/projects/` — Featured technical projects (uLLAMA local-LLM runtime, typed-decision
-  triage demo, AWS Digital Resilience architecture, Gems & Landi AWS Cloud Labs
+- `content/projects/` — Featured technical projects (self-correcting activity generator, uLLAMA
+  local-LLM runtime, typed-decision triage demo, AWS Digital Resilience architecture, Gems & Landi AWS Cloud Labs
   documentation series, 42 systems programming work)
 - `content/blog/` — Technical writing on infrastructure, cloud architecture, and the
   ops-to-cloud-engineering transition
