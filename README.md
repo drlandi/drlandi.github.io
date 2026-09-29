@@ -1,6 +1,6 @@
 # drlandi.dev
 
-Personal website and technical portfolio of Daniel Landi — Cloud & Infrastructure Engineer.
+Personal website and technical portfolio of Daniel Landi — AI & Infrastructure Engineer.
 
 ## About
 
@@ -21,13 +21,24 @@ software engineering practice through:
 
 ## Site Structure
 
-- `content/projects/` — Featured technical projects (AWS Digital Resilience architecture,
-  Gems & Landi AWS Cloud Labs documentation series, 42 systems programming work)
+- `content/projects/` — Featured technical projects (uLLAMA local-LLM runtime, typed-decision
+  triage demo, AWS Digital Resilience architecture, Gems & Landi AWS Cloud Labs
+  documentation series, 42 systems programming work)
 - `content/blog/` — Technical writing on infrastructure, cloud architecture, and the
   ops-to-cloud-engineering transition
 - `content/about.md` — Background and current focus
+- `i18n/` — UI strings per language (`en.toml`, `pt-br.toml`)
 - `layouts/` — Hand-written Hugo templates (no external theme dependency)
+- `static/resume.pdf` / `static/curriculo.pdf` — English and Portuguese résumés linked from About
 - `static/CNAME` — Custom domain configuration for GitHub Pages
+
+## Languages
+
+The site is bilingual. English is the default and lives at `/`; Brazilian Portuguese lives
+at `/pt-br/`. Translations are paired by filename: `about.md` (English) and `about.pt-br.md`
+(Portuguese). A page with no translation simply doesn't appear in the other language, and the
+header language switcher falls back to that language's home page. To add a translated page,
+create the `.pt-br.md` twin next to the English file with the same base name.
 
 ## Stack
 

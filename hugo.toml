@@ -1,29 +1,34 @@
 baseURL = "https://drlandi.dev/"
-languageCode = "en-us"
 title = "Daniel Landi"
+
+# English is the default language and lives at the site root.
+# Brazilian Portuguese lives under /pt-br/.
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
 
 [params]
   name = "Daniel Landi"
-  tagline = "Cloud & Infrastructure Engineer"
-  bio = "25+ years architecting mission-critical distributed systems. Now building cloud-native infrastructure and AI-assisted engineering tools."
   email = "drlandi@gmail.com"
   github = "https://github.com/drlandi"
   linkedin = ""
+  whatsapp = "5511959270064"   # digits only: country code + number
 
 [markup.goldmark.renderer]
   unsafe = true
 
-[[menu.main]]
-  name = "About"
-  url = "/about/"
-  weight = 1
+[languages]
+  [languages.en]
+    languageName = "English"
+    languageCode = "en-US"
+    weight = 1
+    [languages.en.params]
+      tagline = "AI & Infrastructure Engineer"
+      bio = "25+ years running mission-critical systems. Now building AI applications and local-LLM tooling on top of solid infrastructure — from a C inference runtime to cloud-native pipelines."
 
-[[menu.main]]
-  name = "Projects"
-  url = "/projects/"
-  weight = 2
-
-[[menu.main]]
-  name = "Blog"
-  url = "/blog/"
-  weight = 3
+  [languages.pt-br]
+    languageName = "Português"
+    languageCode = "pt-BR"
+    weight = 2
+    [languages.pt-br.params]
+      tagline = "Engenheiro de IA e Infraestrutura"
+      bio = "Mais de 25 anos operando sistemas de missão crítica. Hoje construo aplicações de IA e ferramentas de LLM local sobre infraestrutura sólida — de um runtime de inferência em C a pipelines cloud-native."

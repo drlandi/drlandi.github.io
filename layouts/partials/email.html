@@ -1,0 +1,5 @@
+{{- $email := site.Params.email -}}
+<span class="email-contact">
+  <a href="mailto:{{ $email }}">{{ $email }}</a>
+  <button type="button" class="copy-email" data-email="{{ $email }}" data-label="{{ i18n "copy" }}" data-copied="{{ i18n "copied" }}">{{ i18n "copy" }}</button>
+</span>

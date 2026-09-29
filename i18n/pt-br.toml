@@ -1,0 +1,32 @@
+[nav_about]
+other = "Sobre"
+
+[nav_projects]
+other = "Projetos"
+
+[nav_blog]
+other = "Blog"
+
+[featured_projects]
+other = "Projetos em destaque"
+
+[recent_writing]
+other = "Escritos recentes"
+
+[all_projects]
+other = "Todos os projetos"
+
+[all_posts]
+other = "Todos os posts"
+
+[email]
+other = "e-mail"
+
+[copy]
+other = "copiar"
+
+[copied]
+other = "copiado"
+
+[language_switcher]
+other = "Idioma"

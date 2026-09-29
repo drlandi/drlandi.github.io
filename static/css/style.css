@@ -102,3 +102,26 @@ h2 { font-size: 1.3em; border-bottom: 1px solid var(--border); padding-bottom: 6
   .site-header nav { margin-top: 8px; }
   .site-header nav a { margin-left: 0; margin-right: 16px; }
 }
+
+/* Language switcher + email contact */
+.lang-switch { margin-left: 20px; font-size: 0.85em; color: var(--muted); }
+.lang-switch a, .lang-switch .current { margin-left: 0; margin-right: 8px; }
+.lang-switch .current { color: var(--text); font-weight: bold; }
+.site-header nav .lang-switch a { margin-left: 0; color: var(--accent); }
+.email-contact { white-space: nowrap; }
+.copy-email {
+  font: inherit;
+  font-size: 0.8em;
+  color: var(--muted);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0 6px;
+  margin-left: 6px;
+  cursor: pointer;
+}
+.copy-email:hover { color: var(--text); border-color: var(--muted); }
+.site-footer .links .email-contact a { margin-left: 0; }
+@media (max-width: 600px) {
+  .lang-switch { margin-left: 0; display: block; margin-top: 6px; }
+}
