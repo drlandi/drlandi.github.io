@@ -20,7 +20,7 @@ On a ladder of 41 tasks (easy to hard):
 | Qwen2.5-Coder 7B, local | 15 (68%) | 20 of 41 (49%) | 0 |
 | 7B, then Claude Haiku 5.5, then Claude Sonnet 5.5 | not split out | **41 of 41** | **USD 1.01** |
 
-- The cascade met its target (95% or more with the cloud) and the local tier did not meet its own (80% on easy and medium tasks; the 7B reached 68%, with 3 attempts instead of the 5 the criterion allows).
+- The cascade met its target (95% or more with the cloud) and the local tier did not meet its own (80% on easy and medium tasks; the 7B reached 68%, and stayed at 68% after I gave its 7 unsolved tasks 2 more attempts, 5 in total).
 - 21 of the 41 tasks needed the cloud. Haiku solved 13 of them for about 0.7 cent each. Sonnet solved the last 8 and took 91% of the money.
 - Five tuning experiments on the local model gave no clear gain. One of them looked like a success until a control run showed otherwise (section 7).
 - I retracted six claims along the way. They are listed in section 8, because I think they are the most useful part of the report.
@@ -70,6 +70,8 @@ All tasks were written by me. Some hard tasks were simplified to fit the Norm (f
 Verified attempts: 55 of 123 for the 7B against 29 of 114 for the 3B. The 7B solved 6 tasks the 3B did not, and the 3B solved none that the 7B missed. All 8 hard parsing tasks are unsolved by both.
 
 What the 7B's attempts end in (best round of each of the 123 attempts): 62 pass, 35 sanitizer error, 14 wrong output, 12 did not compile. So the main loss is **memory and undefined-behavior bugs**, not the Norm. Of 104 sanitizer reports, 44 were heap-buffer-overflows and 25 were signed integer overflows.
+
+**Five attempts instead of three.** The criterion allows 5 attempts, so I gave the 7 easy and medium tasks the 7B had not solved (`count_digits`, `array_unique_sorted`, `parse_port`, `str_interleave`, `str_repeat`, `str_squeeze`, `array_rotate`) two more attempts each, with the same settings and a bar written before the run (18 of 22 = 80%). Result: 0 of 14 new attempts verified, so the 7B stays at 15 of 22 (68%) and the bar is not met. Together with the earlier 21 attempts that is 0 verified in 35 attempts on these seven tasks: they are beyond this model, not unlucky draws. More attempts will not close the gap; a better model has to.
 
 The 7B also repeats itself: in 48% of repair rounds (56 of 116) it sent back the same code as before, the same rate as the 3B. The feedback often changes nothing.
 
@@ -141,15 +143,14 @@ Also not proven: the cause of a freeze that killed the first 7B run. The model s
 
 ## 10. What's next
 
-In order of expected value per hour:
+In order of expected value per hour (the first idea I had, more attempts per task, is now ruled out by the 5-attempt run in section 4):
 
-1. Give the 7B attempts 4 and 5 on its unsolved easy and medium tasks (about 3 hours on the laptop). This measures the 80% target as defined.
-2. Search for a better local model of 8B or less that fits in about 5 GB, and run the same ladder.
-3. Show the judge's test cases in the prompt, and change the first prompt. All experiments so far changed only the repair message.
-4. More samples: repair temperature, best-of-N.
-5. A cheaper hybrid: Haiku writes a skeleton, the local model writes the bodies.
-6. Fine-tuning on verified solutions (needs a GPU, hundreds of tasks, and a check of the providers' terms).
-7. Larger local models on a planned 64 GB desktop.
+1. Search for a better local model of 8B or less that fits in about 5 GB, and run the same ladder.
+2. Show the judge's test cases in the prompt, and change the first prompt. All experiments so far changed only the repair message.
+3. More samples: repair temperature, best-of-N.
+4. A cheaper hybrid: Haiku writes a skeleton, the local model writes the bodies.
+5. Fine-tuning on verified solutions (needs a GPU, hundreds of tasks, and a check of the providers' terms).
+6. Larger local models on a planned 64 GB desktop.
 
 For every new experiment: run a control on the same tasks, write the success bar before the run.
 

@@ -20,7 +20,7 @@ Numa escada de 41 tarefas (de fáceis a difíceis):
 | Qwen2.5-Coder 7B, local | 15 (68%) | 20 de 41 (49%) | 0 |
 | 7B, depois Claude Haiku 5.5, depois Claude Sonnet 5.5 | não separado | **41 de 41** | **USD 1,01** |
 
-- A cascata atingiu a meta (95% ou mais com a nuvem). O nível local não atingiu a sua (80% nas fáceis e médias; o 7B chegou a 68%, com 3 tentativas em vez das 5 que o critério permite).
+- A cascata atingiu a meta (95% ou mais com a nuvem). O nível local não atingiu a sua (80% nas fáceis e médias; o 7B chegou a 68% e continuou em 68% depois que dei 2 tentativas a mais às 7 tarefas que ele não resolveu, 5 no total).
 - 21 das 41 tarefas precisaram da nuvem. O Haiku resolveu 13 delas por cerca de 0,7 centavo de dólar cada. O Sonnet resolveu as 8 últimas e levou 91% do dinheiro.
 - Cinco experimentos de ajuste no modelo local não deram ganho claro. Um deles parecia sucesso até um controle mostrar o contrário (seção 7).
 - Retratei seis afirmações no caminho. Estão listadas na seção 8, porque acho que são a parte mais útil do relatório.
@@ -70,6 +70,8 @@ Todas as tarefas foram escritas por mim. Algumas tarefas difíceis foram simplif
 Tentativas verificadas: 55 de 123 para o 7B contra 29 de 114 para o 3B. O 7B resolveu 6 tarefas que o 3B não resolveu, e o 3B não resolveu nenhuma que o 7B errou. As 8 tarefas difíceis de parsing ficaram sem solução nos dois.
 
 Como terminam as tentativas do 7B (melhor rodada de cada uma das 123): 62 passam, 35 com erro de sanitizer, 14 com saída errada, 12 não compilam. Ou seja, a principal perda são **bugs de memória e de comportamento indefinido**, não a Norma. Dos 104 relatórios de sanitizer, 44 eram heap-buffer-overflow e 25 eram overflow de inteiro com sinal.
+
+**Cinco tentativas em vez de três.** O critério permite 5 tentativas, então dei às 7 tarefas fáceis e médias que o 7B não resolveu (`count_digits`, `array_unique_sorted`, `parse_port`, `str_interleave`, `str_repeat`, `str_squeeze`, `array_rotate`) mais duas tentativas cada, com as mesmas configurações e uma meta escrita antes da rodada (18 de 22 = 80%). Resultado: 0 das 14 novas tentativas foi verificada, então o 7B continua em 15 de 22 (68%) e a meta não foi atingida. Somando as 21 tentativas anteriores, são 0 verificadas em 35 tentativas nessas sete tarefas: elas estão além deste modelo, não foram azar. Mais tentativas não fecham a diferença; precisa de um modelo melhor.
 
 O 7B também se repete: em 48% das rodadas de reparo (56 de 116) ele devolveu o mesmo código de antes, a mesma taxa do 3B. O feedback muitas vezes não muda nada.
 
@@ -141,15 +143,14 @@ Também não está provado: a causa de um travamento que matou a primeira rodada
 
 ## 10. Próximos passos
 
-Em ordem de valor esperado por hora:
+Em ordem de valor esperado por hora (a primeira ideia que tive, mais tentativas por tarefa, está descartada pela rodada de 5 tentativas da seção 4):
 
-1. Dar ao 7B as tentativas 4 e 5 nas tarefas fáceis e médias que ele não resolveu (cerca de 3 horas no notebook). Isso mede a meta de 80% como foi definida.
-2. Procurar um modelo local melhor, de 8B ou menos, que caiba em cerca de 5 GB, e rodar a mesma escada.
-3. Mostrar os casos de teste do juiz no prompt e mudar o primeiro prompt. Todos os experimentos até agora mudaram só a mensagem de reparo.
-4. Mais amostras: temperatura de reparo, melhor de N.
-5. Um híbrido mais barato: o Haiku escreve um esqueleto, o modelo local escreve os corpos.
-6. Fine-tuning com soluções verificadas (precisa de GPU, centenas de tarefas e uma checagem dos termos dos provedores).
-7. Modelos locais maiores num desktop de 64 GB que estou planejando.
+1. Procurar um modelo local melhor, de 8B ou menos, que caiba em cerca de 5 GB, e rodar a mesma escada.
+2. Mostrar os casos de teste do juiz no prompt e mudar o primeiro prompt. Todos os experimentos até agora mudaram só a mensagem de reparo.
+3. Mais amostras: temperatura de reparo, melhor de N.
+4. Um híbrido mais barato: o Haiku escreve um esqueleto, o modelo local escreve os corpos.
+5. Fine-tuning com soluções verificadas (precisa de GPU, centenas de tarefas e uma checagem dos termos dos provedores).
+6. Modelos locais maiores num desktop de 64 GB que estou planejando.
 
 Para todo experimento novo: rodar um controle nas mesmas tarefas e escrever a meta de sucesso antes da rodada.
 
