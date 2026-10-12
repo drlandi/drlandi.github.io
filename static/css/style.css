@@ -125,3 +125,5 @@ h2 { font-size: 1.3em; border-bottom: 1px solid var(--border); padding-bottom: 6
 @media (max-width: 600px) {
   .lang-switch { margin-left: 0; display: block; margin-top: 6px; }
 }
+
+img { max-width: 100%; height: auto; }
