@@ -69,14 +69,21 @@ Expected: `<meta name=generator content="Hugo …">` and a title containing "Dan
 
 Everything unfinished is in `BACKLOG.md`. The ones that matter most:
 
-1. CI uses Hugo `latest` while local uses 0.123.7 (not pinned).
-2. Check the claims on the older pages (About, Digital Resilience) in both languages: the country count and "built independently".
-3. The `www` subdomain is not set up.
-4. Porkbun 2FA is off.
+1. CI uses Hugo `latest` while local uses 0.123.7 (not pinned). Pages were also tested in Claude's sandbox with 0.152.2.
+2. The résumé PDFs on the site may lack the AWS Cloud Practitioner line; replace them with the newest versions.
+3. Check the claims on the older pages: "built independently" on Digital Resilience, and the wording of the country count ("six outside Brazil" / "seven counting Brazil").
+4. The `www` subdomain is not set up.
+5. Porkbun 2FA is off.
 
 ## Public contact data
 
-The site and repo publish the email address, a WhatsApp number (in `hugo.toml`) and the LinkedIn URL, by choice (commit `4068ced`, "WhatsApp contact"). They are also in git history, so removing them later does not erase them from older commits.
+The site and repo publish the email address (shown as text with a copy button), a WhatsApp number (in `hugo.toml`) and the LinkedIn URL, by choice (commit `4068ced`, "WhatsApp contact"). The two résumé PDFs also carry a phone/WhatsApp number on purpose. All of this is in git history, so removing it later does not erase it from older commits.
+
+## Ordering and templates worth knowing
+
+- Pages with a future `date` are not built. To control the order of projects use `weight` in front matter (the Bob project has `weight: 1`, so it is first).
+- `baseof.html` already outputs `hreflang` alternate links and sets `<html lang>` per language.
+- The language switcher falls back to the other language's home page when a page has no translation.
 
 ## Docs in this folder
 

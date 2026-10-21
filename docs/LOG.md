@@ -54,6 +54,12 @@ Source note: entries from 2026-09-25 to 2026-09-26 come from the build session. 
   - Added `static/resume.pdf` and `static/curriculo.pdf` (about 79 KB each).
   - Added two new projects in both languages: `typed-decisions-demo` and `ullama`.
   - Updated `README.md` and `content/about.md`.
+- Context from the earlier chat's handoff (not visible in git):
+  - Email: the `mailto:` link opened a mail-app setup prompt because Pop!_OS has no mail client and Gmail is used in the browser. It was replaced by the visible address with a copy button (partial `email.html`, shortcode `{{< email >}}`, a small script in the footer).
+  - The site changes were prepared in Claude's sandbox, built with Hugo 0.152.2 for testing, and delivered as patch files that were applied locally with `git apply`, previewed, committed and pushed by Landi. Claude cannot push to GitHub.
+  - Bilingual details: header links built with `relLangURL`, the language switcher falls back to the other language's home page when a page has no translation, `<html lang>` follows the language, `hreflang` alternate links are in `baseof.html`, dates are localized.
+  - Project pages: `ullama` states that fine-tuning and the offline factory are planned, not done; `typed-decisions-demo` states the typed model is simulated; the Bob project has `weight: 1` so it sorts first, and a "Limits" section (in-memory store, validator not wired into the UI, English-only interface).
+  - New résumés were reconciled from Lattes and older CVs (six countries outside Brazil, seven counting Brazil; unsupported claims removed; phone/WhatsApp included on purpose).
 - `e1f4dc1` "Add Bob activity generator project and LinkedIn link" (4 files): added `self-correcting-activity-generator` (EN + PT), a one-line `hugo.toml` change and a README update.
 
 ## 2026-10-11: Blog post on the C code factory (2 commits)
@@ -66,7 +72,8 @@ Source note: entries from 2026-09-25 to 2026-09-26 come from the build session. 
 
 - Decided to keep the site's history in the repo instead of in chat threads (D9).
 - Created `docs/STATE.md`, `RUNBOOK.md`, `DECISIONS.md`, `LOG.md`, `BACKLOG.md`, plus an Obsidian map note for The-Forge. Reconciled them with the git history (the two entries above).
-- Not committed yet at the time of writing: the `docs/` folder itself.
+- Committed and pushed as `a0ad578` ("Add project documentation system (docs/)"). The Actions run for it is the first docs-only deploy.
+- Read the handoff summary of the earlier chat where the 2026-09-29 work was done, and merged its facts (see the 2026-09-29 notes above and BACKLOG).
 
 <!-- Add the next entry below. Template:
 

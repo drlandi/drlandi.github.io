@@ -11,17 +11,28 @@ Fill this section in your own words. The three plans mentioned earlier have alre
 - [x] **[you]** Bilingual site, English and Português (`4068ced`, 2026-09-29).
 - [x] **[you]** AI positioning: tagline and bio rewritten around AI, uLLAMA and typed-decisions projects added (`4068ced`).
 - [ ] **[you][verify]** Publish a blog post about uLLAMA. A *project page* for it exists (`ullama`), but the blog has only two posts: `why-im-transitioning` and `c42-factory`.
+- [ ] **[you]** LinkedIn post announcing the new bilingual site: Portuguese first, then English, flag emojis, always @42SP and #42. Draft it in AppFlowy.
 - [ ] **[you]** _Add your other ideas here._
 
 ## Check first (content accuracy, small)
 
-- [ ] **[verify]** The résumé files exist (`static/resume.pdf`, `static/curriculo.pdf`). Open the About page in each language and click the résumé link to be sure it points to the right file. The original link in `about.md` was `/resume.pdf`.
-- [ ] **[suggested]** The original About page said "six countries" and the README said "seven". Both pages were edited on 2026-09-29; confirm the number is now the same everywhere, in both languages.
+- [ ] **[verify]** The résumé links: the English About page links `/resume.pdf` and the Portuguese one `/curriculo.pdf`. Click both on the live site. (The old link was broken before 2026-09-29.)
+- [ ] **[suggested]** Countries: the résumé work found that "six" and "seven" are both true (six countries outside Brazil, seven counting Brazil). Make the wording say which, on the About pages and README, in both languages.
+- [ ] **[you]** The two résumé PDFs on the site may be older than your latest versions. A later version added "AWS Certified Cloud Practitioner (2024)". Replace `static/resume.pdf` and `static/curriculo.pdf` with the newest ones, then commit and push. The editable sources are the `.docx` files, which live on your computer, not in the repo.
+- [ ] **[verify]** Click the live-demo link on the Bob project page (Railway) before relying on it: it depends on the hackathon key and may stop working. If it does, say so on the page.
 - [ ] **[suggested]** The original `digital-resilience.md` said "Built independently" for what was a team hackathon (Equipe 5). Check the English and Portuguese text and say exactly who did what.
 - [ ] **[suggested]** Re-read the older project pages for claims you cannot back up in an interview. They were first drafted from chat notes, not from the repos.
 - [ ] **[suggested]** Link each project page to its real repository instead of the general `github.com/drlandi`.
 - [ ] **[suggested]** Add a YouTube link when the channel exists. (The LinkedIn link is already set.)
 - [ ] **[suggested]** Email address and WhatsApp number are public in the site and in git history. Confirm that is what you want (STATE.md, "Public contact data").
+
+## Project repos behind the site (found in the earlier chat's handoff)
+
+- [ ] **[suggested]** The Bob repo (`drlandi/ibm-bob-activity-generator`) has no `README.md`. Write one; the project page already has most of the content.
+- [ ] **[suggested]** The `ullama` repo has clutter (`src/aso`, `src/eroou`, `src/erros.txt`) and the Python `factory/` folder was not in the public repo. The project page says the fine-tuning and offline factory are *planned*, so keep the page and the repo telling the same story.
+- [ ] **[suggested]** The Netlify demo URLs have random names (for example `singular-kashata-…`). Consider renaming them and updating the project page.
+- [ ] **[suggested]** Check that the LinkedIn headline and the CIEBP dates ("Professor Especialista", Feb 2023 to present) match the résumé.
+- [ ] **[suggested]** Optional: a "Write in Gmail" compose link next to the email copy button (offered, not added).
 
 ## Reliability
 
@@ -37,7 +48,6 @@ Fill this section in your own words. The three plans mentioned earlier have alre
 - [ ] **[suggested]** RSS link in the header or footer (Hugo already generates `index.xml`).
 - [ ] **[suggested]** Favicon (the original template used an empty data URI) and a social-preview image.
 - [ ] **[suggested]** Check the site on a phone and with a screen reader, in both languages.
-- [ ] **[suggested]** `hreflang` tags so search engines connect each page to its translation (check what `baseof.html` already outputs first).
 - [ ] **[suggested]** Page order control (`weight` in front matter) for projects.
 
 ## Content pipeline
@@ -55,4 +65,7 @@ Fill this section in your own words. The three plans mentioned earlier have alre
 - [x] Bilingual site, AI positioning, résumés, LinkedIn and WhatsApp contact (2026-09-29)
 - [x] Projects added: typed-decisions-demo, ullama, self-correcting-activity-generator (2026-09-29)
 - [x] Blog post: the C code factory, EN + PT (2026-10-11)
-- [x] Documentation system created (2026-10-21)
+- [x] Email shown as text with a copy button, replacing the `mailto:` link that opened a mail-app prompt (2026-09-29)
+- [x] `hreflang` alternate links, `<html lang>` per language and localized dates are already in the templates (2026-09-29)
+- [x] Bob project page and LinkedIn footer link are in `main` (`e1f4dc1`) and its deploy run was green
+- [x] Documentation system created and committed (`a0ad578`, 2026-10-21)

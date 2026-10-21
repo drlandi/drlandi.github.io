@@ -85,3 +85,17 @@ Why things are the way they are. One entry per decision: context, choice, reason
 - **Decision:** the tagline changed from "Cloud & Infrastructure Engineer" to "AI & Infrastructure Engineer"; the bio now presents 25+ years of mission-critical systems as the foundation for AI applications and local-LLM tooling "from a C inference runtime to cloud-native pipelines". Projects on uLLAMA, typed decisions and the activity generator were added the same day.
 - **Reasoning:** the site is the anchor of the job search, and the target roles named earlier were broad (cloud, DevOps/SRE, backend). The recent work that is distinctive is the AI and local-model tooling, so the first line a recruiter reads now says so, while the infrastructure experience is kept as the credibility behind it.
 - **Revisit when:** the job search narrows to one target role, or the AI projects stop being the most recent and strongest work.
+
+## D12. Email shown as text with a copy button (no `mailto:` link)
+
+- **Date:** 2026-09-29 (commit `4068ced`; context from the earlier chat's handoff).
+- **Context:** the `mailto:` link opened a mail-app setup prompt, because the Pop!_OS laptop has no mail client and Gmail is used in the browser. Visitors in the same situation would hit the same dead end.
+- **Decision:** show the address as plain text with a small copy button (`layouts/partials/email.html`, shortcode `{{< email >}}`, a few lines of script in the footer). A "Write in Gmail" compose link was considered and not added.
+- **Cost:** a little JavaScript on a site otherwise free of it. The address is plain text, so it is easy for scrapers to collect.
+
+## D13. Résumés as static PDFs, in two languages, phone included
+
+- **Date:** 2026-09-29 (commit `4068ced`).
+- **Decision:** `static/resume.pdf` (English) and `static/curriculo.pdf` (Português), AI-focused, linked from each About page. The phone/WhatsApp number is on them on purpose. Facts were reconciled from the Lattes record and older CVs, and unsupported claims were removed.
+- **Reasoning:** the old `/resume.pdf` link was broken, and recruiters ask for a PDF first. Static files need no build step and no maintenance.
+- **Cost:** the PDFs go stale unless replaced by hand (BACKLOG: add the AWS certification line), and the editable `.docx` sources are not in the repo.
