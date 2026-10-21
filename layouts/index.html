@@ -1,7 +1,18 @@
 {{ define "main" }}
 <section class="hero wrap">
-  <h1>{{ site.Params.name }}</h1>
-  <p class="tagline">{{ site.Params.tagline }}</p>
+  <div class="hero-top">
+    {{ if os.FileExists "static/images/landi.jpg" }}
+    <img class="avatar" src="{{ "images/landi.jpg" | relURL }}" alt="{{ site.Params.name }}" width="150" height="150">
+    {{ else }}
+    <span class="avatar avatar-fallback" aria-hidden="true">DL</span>
+    {{ end }}
+    <div class="hero-text">
+      <h1>{{ site.Params.name }}</h1>
+      <p class="tagline">{{ site.Params.tagline }}</p>
+      {{ with site.Params.motto }}<p class="motto">{{ . }}</p>{{ end }}
+      {{ partial "social-icons.html" . }}
+    </div>
+  </div>
   <p class="bio">{{ site.Params.bio }}</p>
 </section>
 
@@ -29,5 +40,18 @@
     {{ end }}
   </ul>
   <p><a href="{{ "blog/" | relLangURL }}">{{ i18n "all_posts" }} &rarr;</a></p>
+</section>
+
+<section class="wrap">
+  <h2>{{ i18n "timeline_title" }}</h2>
+  <ol class="timeline">
+    {{ range site.Data.timeline }}
+    <li>
+      <span class="t-years">{{ replace .years "now" (i18n "now") }}</span>
+      <span class="t-mark" aria-hidden="true">{{ .mark }}</span>
+      <span class="t-text">{{ index . site.Language.Lang | safeHTML }}</span>
+    </li>
+    {{ end }}
+  </ol>
 </section>
 {{ end }}

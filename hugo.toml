@@ -23,6 +23,7 @@ defaultContentLanguageInSubdir = false
     weight = 1
     [languages.en.params]
       tagline = "AI & Infrastructure Engineer"
+      motto = "I like building systems that keep running, and teaching small models to write C 🧠⚙️📡"
       bio = "25+ years running mission-critical systems. Now building AI applications and local-LLM tooling on top of solid infrastructure — from a C inference runtime to cloud-native pipelines."
 
   [languages.pt-br]
@@ -31,4 +32,5 @@ defaultContentLanguageInSubdir = false
     weight = 2
     [languages.pt-br.params]
       tagline = "Engenheiro de IA e Infraestrutura"
+      motto = "Gosto de construir sistemas que não caem e de ensinar modelos pequenos a escrever C 🧠⚙️📡"
       bio = "Mais de 25 anos operando sistemas de missão crítica. Hoje construo aplicações de IA e ferramentas de LLM local sobre infraestrutura sólida — de um runtime de inferência em C a pipelines cloud-native."

@@ -1,0 +1,7 @@
+<ul class="icons">
+  <li><a href="{{ site.Params.github }}" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><span aria-hidden="true">&lt;/&gt;</span></a></li>
+  {{ with site.Params.linkedin }}<li><a href="{{ . }}" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><span aria-hidden="true">in</span></a></li>{{ end }}
+  <li><a href="mailto:{{ site.Params.email }}" aria-label="{{ i18n "email" }}" title="{{ i18n "email" }}"><span aria-hidden="true">@</span></a></li>
+  {{ with site.Params.whatsapp }}<li><a href="https://wa.me/{{ . }}" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp"><span aria-hidden="true">&#128172;</span></a></li>{{ end }}
+  <li><a href="{{ "index.xml" | relLangURL }}" aria-label="{{ i18n "rss" }}" title="{{ i18n "rss" }}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="5" cy="19" r="1.6" fill="currentColor" stroke="none"/><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"/></svg></a></li>
+</ul>

@@ -30,3 +30,12 @@ other = "copiado"
 
 [language_switcher]
 other = "Idioma"
+
+[timeline_title]
+other = "Trajetória"
+
+[rss]
+other = "Feed RSS"
+
+[now]
+other = "hoje"
