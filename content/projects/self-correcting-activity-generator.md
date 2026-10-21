@@ -87,8 +87,8 @@ with stdin ignored and the output streams collected fixed it.
 The CLI is installed through IBM's installer script rather than the npm registry, so a
 standard `npm install` on a cloud host cannot provide it. The Dockerfile starts from
 `node:22-slim`, runs the installer non-interactively, and then runs `bob --version` as a build
-step so that a broken install fails the build instead of failing at runtime. The container is
-deployed on Railway with the API key supplied as an environment variable.
+step so that a broken install fails the build instead of failing at runtime. The container was
+deployed on Railway for the hackathon, with the API key supplied as an environment variable.
 
 ## Limits
 
@@ -103,5 +103,6 @@ deployed on Railway with the API key supplied as an environment variable.
 
 ---
 
-*[Live demo](https://ibm-bob-activity-generator-production.up.railway.app) ·
-[Code](https://github.com/drlandi/ibm-bob-activity-generator)*
+*[Code](https://github.com/drlandi/ibm-bob-activity-generator)*
+
+The public demo ran on Railway during and after the hackathon. It depended on the hackathon's API key, and it is no longer running.

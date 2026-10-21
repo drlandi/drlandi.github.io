@@ -90,8 +90,8 @@ por `spawn`, com stdin ignorado e os fluxos de saída coletados, resolveu.
 A CLI é instalada por um script instalador da IBM, e não pelo registro do npm; portanto, um
 `npm install` comum em um host de nuvem não a fornece. O Dockerfile parte de `node:22-slim`,
 executa o instalador de forma não interativa e roda `bob --version` como etapa de build, para
-que uma instalação quebrada falhe no build e não em tempo de execução. O contêiner está
-publicado no Railway, com a chave da API fornecida por variável de ambiente.
+que uma instalação quebrada falhe no build e não em tempo de execução. O contêiner foi
+publicado no Railway durante o hackathon, com a chave da API fornecida por variável de ambiente.
 
 ## Limites
 
@@ -106,5 +106,6 @@ publicado no Railway, com a chave da API fornecida por variável de ambiente.
 
 ---
 
-*[Demo ao vivo](https://ibm-bob-activity-generator-production.up.railway.app) ·
-[Código](https://github.com/drlandi/ibm-bob-activity-generator)*
+*[Código](https://github.com/drlandi/ibm-bob-activity-generator)*
+
+A demo pública ficou no ar no Railway durante e depois do hackathon. Ela dependia da chave de API do hackathon e não está mais em execução.
