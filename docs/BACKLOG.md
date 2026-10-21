@@ -18,7 +18,7 @@ Fill this section in your own words. The three plans mentioned earlier have alre
 
 - [ ] **[verify]** The résumé links: the English About page links `/resume.pdf` and the Portuguese one `/curriculo.pdf`. Click both on the live site. (The old link was broken before 2026-09-29.)
 - [ ] **[suggested]** Countries: the résumé work found that "six" and "seven" are both true (six countries outside Brazil, seven counting Brazil). Make the wording say which, on the About pages and README, in both languages.
-- [ ] **[you]** The two résumé PDFs on the site may be older than your latest versions. A later version added "AWS Certified Cloud Practitioner (2024)". Replace `static/resume.pdf` and `static/curriculo.pdf` with the newest ones, then commit and push. The editable sources are the `.docx` files, which live on your computer, not in the repo.
+- [ ] **[verify]** The résumé PDFs list the Bob project code as `github.com/drlandi/ibm-bob-activity-generator`, taken from the earlier chat's handoff. Confirm the repo name and that it is public; it still has no README.
 - [ ] **[verify]** Click the live-demo link on the Bob project page (Railway) before relying on it: it depends on the hackathon key and may stop working. If it does, say so on the page.
 - [ ] **[suggested]** The original `digital-resilience.md` said "Built independently" for what was a team hackathon (Equipe 5). Check the English and Portuguese text and say exactly who did what.
 - [ ] **[suggested]** Re-read the older project pages for claims you cannot back up in an interview. They were first drafted from chat notes, not from the repos.
@@ -69,3 +69,4 @@ Fill this section in your own words. The three plans mentioned earlier have alre
 - [x] `hreflang` alternate links, `<html lang>` per language and localized dates are already in the templates (2026-09-29)
 - [x] Bob project page and LinkedIn footer link are in `main` (`e1f4dc1`) and its deploy run was green
 - [x] Documentation system created and committed (`a0ad578`, 2026-10-21)
+- [x] Résumé PDFs replaced with the AI-focused versions that include the AWS Cloud Practitioner line (2026-10-21)

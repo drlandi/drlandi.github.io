@@ -73,6 +73,7 @@ Source note: entries from 2026-09-25 to 2026-09-26 come from the build session. 
 - Decided to keep the site's history in the repo instead of in chat threads (D9).
 - Created `docs/STATE.md`, `RUNBOOK.md`, `DECISIONS.md`, `LOG.md`, `BACKLOG.md`, plus an Obsidian map note for The-Forge. Reconciled them with the git history (the two entries above).
 - Committed and pushed as `a0ad578` ("Add project documentation system (docs/)"). The Actions run for it is the first docs-only deploy.
+- Rebuilt `static/resume.pdf` and `static/curriculo.pdf` (two pages each) from the markdown sources, adding the AWS Cloud Practitioner line and replacing a "[confirm repository link]" placeholder with the Bob repo URL. Replaced the files on the site; confirmed live by Landi in the afternoon.
 - Read the handoff summary of the earlier chat where the 2026-09-29 work was done, and merged its facts (see the 2026-09-29 notes above and BACKLOG).
 
 <!-- Add the next entry below. Template:

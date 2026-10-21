@@ -70,7 +70,7 @@ Expected: `<meta name=generator content="Hugo …">` and a title containing "Dan
 Everything unfinished is in `BACKLOG.md`. The ones that matter most:
 
 1. CI uses Hugo `latest` while local uses 0.123.7 (not pinned). Pages were also tested in Claude's sandbox with 0.152.2.
-2. The résumé PDFs on the site may lack the AWS Cloud Practitioner line; replace them with the newest versions.
+2. Résumé PDFs are current as of 2026-10-21 (they include the AWS Cloud Practitioner line). Their markdown sources should be kept in the Obsidian vault.
 3. Check the claims on the older pages: "built independently" on Digital Resilience, and the wording of the country count ("six outside Brazil" / "seven counting Brazil").
 4. The `www` subdomain is not set up.
 5. Porkbun 2FA is off.
